@@ -1,0 +1,939 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For my birthday girl ♡</title>
+
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+       @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            background: #f7f3eb;
+            color: #34383d;
+            font-family: "DM Sans", sans-serif;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        .birthday-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            padding: 14px 12px;
+
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+
+            text-align: center;
+
+            font-size: clamp(15px, 4vw, 21px);
+            font-weight: 700;
+            letter-spacing: 1px;
+
+            color: #59616a;
+
+            border-bottom: 1px solid rgba(89, 97, 106, 0.12);
+
+            animation: slideDown 1s ease;
+        }
+
+        .birthday-bar span {
+            color: #9b4f62;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =========================
+           MAIN PAGE
+        ========================= */
+
+        .page {
+            min-height: 100vh;
+            padding: 100px 20px 50px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at 15% 20%, rgba(219, 224, 203, 0.8), transparent 30%),
+                radial-gradient(circle at 85% 80%, rgba(163, 175, 188, 0.35), transparent 30%),
+                #f7f3eb;
+        }
+
+
+        /* =========================
+           LITTLE FLOATING THINGS
+        ========================= */
+
+        .floating {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.55;
+
+            animation: float 7s ease-in-out infinite;
+        }
+
+        .floating.one {
+            top: 17%;
+            left: 8%;
+            font-size: 25px;
+        }
+
+        .floating.two {
+            top: 32%;
+            right: 8%;
+            font-size: 20px;
+            animation-delay: 1s;
+        }
+
+        .floating.three {
+            bottom: 18%;
+            left: 12%;
+            font-size: 18px;
+            animation-delay: 2s;
+        }
+
+        .floating.four {
+            bottom: 28%;
+            right: 13%;
+            font-size: 28px;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-18px) rotate(8deg);
+            }
+        }
+
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .intro {
+            text-align: center;
+            margin-bottom: 42px;
+
+            animation: appear 1.3s ease;
+        }
+        .outro {
+            text-align: center;
+            margin-bottom: 42px;
+            animation: appear 1.3s ease;
+        }
+
+        .small-text {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 21px;
+            color: #7a8087;
+            margin-bottom: 5px;
+        }
+
+        .intro h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(40px, 12vw, 75px);
+            font-weight: 600;
+            color: #59616a;
+            line-height: 0.95;
+        }
+
+        .intro h1 em {
+            color: #9b4f62;
+        }
+
+        .intro p {
+            margin-top: 17px;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 22px;
+            color: #747a80;
+        }
+        .outro p{
+             margin-top: 103px;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 22px;
+            color: #747a80;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =========================
+           ENVELOPES
+        ========================= */
+
+        .envelopes {
+            width: 100%;
+            max-width: 700px;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+
+            animation: appear 1.5s ease;
+        }
+
+        .envelope-card {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            transition: transform 0.35s ease;
+        }
+
+        .envelope-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .envelope-card:active {
+            transform: scale(0.96);
+        }
+
+        .envelope {
+            width: min(160px, 38vw);
+            aspect-ratio: 1.35 / 1;
+
+            position: relative;
+
+            border-radius: 6px;
+
+            box-shadow:
+                0 15px 30px rgba(60, 65, 70, 0.15);
+
+            overflow: hidden;
+
+            transition: box-shadow 0.35s ease;
+        }
+
+        .envelope-card:hover .envelope {
+            box-shadow:
+                0 20px 38px rgba(60, 65, 70, 0.23);
+        }
+
+        /* FIRST ENVELOPE */
+
+        .envelope.first {
+            background: #DBE0CB;
+        }
+
+        /* SECOND ENVELOPE */
+
+        .envelope.second {
+            background: #ccd7e3;
+        }
+
+        .envelope::before {
+            content: "";
+            position: absolute;
+
+            left: 0;
+            bottom: 0;
+
+            width: 0;
+            height: 0;
+
+            border-left: calc(min(160px, 38vw) / 2) solid transparent;
+            border-right: calc(min(160px, 38vw) / 2) solid transparent;
+            border-bottom: calc(min(160px, 38vw) * 0.48) solid rgba(255, 255, 255, 0.25);
+
+            z-index: 2;
+        }
+
+        .envelope::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 0;
+            height: 0;
+
+            border-left: calc(min(160px, 38vw) / 2) solid transparent;
+            border-right: calc(min(160px, 38vw) / 2) solid transparent;
+            border-top: calc(min(160px, 38vw) * 0.48) solid rgba(255, 255, 255, 0.42);
+
+            z-index: 3;
+        }
+
+        .heart {
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            z-index: 5;
+
+            width: 43px;
+            height: 43px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.75);
+
+            font-size: 21px;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .envelope-label {
+            margin-top: 17px;
+
+            font-family: "Cormorant Garamond", serif;
+            font-size: 24px;
+            font-weight: 600;
+
+            color: #59616a;
+        }
+
+        .hint {
+            margin-top: 5px;
+
+            font-size: 11px;
+            letter-spacing: 1px;
+
+            color: #969ca2;
+            text-transform: uppercase;
+        }
+
+
+        /* =========================
+           LETTER PAGE
+        ========================= */
+
+        .letter-page {
+            display: none;
+
+            min-height: 100vh;
+
+            padding: 95px 18px 50px;
+
+            position: relative;
+
+            animation: pageIn 0.7s ease;
+        }
+
+        .letter-page.show {
+            display: block;
+        }
+
+        @keyframes pageIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .back-button {
+            position: fixed;
+
+            top: 64px;
+            left: 18px;
+
+            z-index: 900;
+
+            width: 45px;
+            height: 45px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.85);
+
+            color: #59616a;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            transform: translateX(-3px);
+        }
+
+        .letter {
+            width: 100%;
+            max-width: 760px;
+
+            margin: 0 auto;
+
+            padding: clamp(30px, 7vw, 65px);
+
+            border-radius: 4px;
+
+            box-shadow:
+                0 20px 60px rgba(50, 55, 60, 0.12);
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        /* FIRST LETTER */
+
+        .letter.green {
+            background: #DBE0CB;
+        }
+
+
+        /* SECOND LETTER */
+
+        .letter.blue {
+            background: #CBD8E0;
+        }
+
+        .letter::before {
+            content: "♡";
+
+            position: absolute;
+
+            top: 15px;
+            right: 25px;
+
+            font-size: 28px;
+
+            opacity: 0.25;
+        }
+
+        .letter-title {
+            text-align: center;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(30px, 8vw, 48px);
+
+            color: #59616a;
+
+            margin-bottom: 35px;
+        }
+
+       
+        .english-letter {
+         font-family: "Caveat", cursive;
+         font-size: 26px;
+         line-height: 1.6;
+         font-weight: 500;
+    }
+
+        .english-letter p {
+            margin-bottom: 20px;
+        }
+
+        .signature {
+            margin-top: 30px;
+
+            text-align: right;
+
+            font-family: "Playfair Display", serif;
+
+            font-style: italic;
+
+            font-size: 25px;
+
+            color: #9eadbe;
+        }
+
+
+        /* =========================
+           ARABIC LETTER
+        ========================= */
+
+        .arabic-letter {
+         direction: rtl;
+         font-family: "Amiri", serif;
+         font-size: 24px;
+         line-height: 2;
+         text-align: right;
+         color: #454545;
+        }
+
+        .arabic-letter p {
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           CONFETTI
+        ========================= */
+
+        .confetti {
+            position: fixed;
+
+            width: 8px;
+            height: 13px;
+
+            top: -20px;
+
+            z-index: 2000;
+
+            pointer-events: none;
+
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+
+            to {
+                transform:
+                    translateY(110vh)
+                    rotate(720deg);
+                opacity: 0;
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .page {
+                padding-top: 100px;
+            }
+
+            .intro {
+                margin-bottom: 35px;
+            }
+
+            .envelopes {
+                gap: 15px;
+            }
+
+            .envelope-label {
+                font-size: 21px;
+            }
+
+            .letter {
+                padding: 35px 23px;
+            }
+
+            .back-button {
+                top: 61px;
+                left: 12px;
+            }
+
+        }
+
+        @media (max-width: 380px) {
+
+            .envelopes {
+                gap: 8px;
+            }
+
+            .envelope {
+                width: 135px;
+            }
+
+            .envelope-label {
+                font-size: 19px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BIRTHDAY BAR
+    ========================== -->
+
+    <div class="birthday-bar">
+        Now you're <span>21, bitch</span> ♡
+    </div>
+
+
+    <!-- =========================
+         HOME PAGE
+    ========================== -->
+
+    <main class="page" id="homePage">
+
+        <div class="floating one">♡</div>
+        <div class="floating two">✦</div>
+        <div class="floating three">♡</div>
+        <div class="floating four">✦</div>
+
+
+        <div class="intro">
+
+            <div class="small-text">
+                for the girl who means more than words
+            </div>
+
+            <h1>
+                Happy <em>21st</em>
+            </h1>
+
+            <p>
+                I have a few things to tell you...
+            </p>
+
+        </div>
+
+
+        <div class="envelopes">
+
+
+            <!-- FIRST ENVELOPE -->
+
+            <button class="envelope-card" onclick="openLetter('englishLetter')">
+
+                <div class="envelope first">
+
+                    <div class="heart">
+                        ♡
+                    </div>
+
+                </div>
+
+                <div class="envelope-label">
+                    Open me
+                </div>
+
+                <div class="hint">
+                    there is something here
+                </div>
+
+            </button>
+
+
+            <!-- SECOND ENVELOPE -->
+
+            <button class="envelope-card" onclick="openLetter('arabicLetter')">
+
+                <div class="envelope second">
+
+                    <div class="heart">
+                        ♡
+                    </div>
+
+                </div>
+
+                <div class="envelope-label">
+                    Open me
+                </div>
+
+                <div class="hint">
+                    one more thing
+                </div>
+
+            </button>
+
+
+        </div>
+
+        <div class="outro">
+            <p>
+                 By the way even all this isn't enough for quite half...
+             </p>
+        </div>
+    </main>
+
+
+    <!-- =========================
+         ENGLISH LETTER
+    ========================== -->
+
+    <section class="letter-page" id="englishLetter">
+
+        <button class="back-button" onclick="goHome()">
+            ←
+        </button>
+
+        <article class="letter green">
+
+            <div class="english-letter">
+
+                <h3>
+                    To the only person I still feel safe with ♡,
+                </H3>
+
+                <p>
+                    Thank you for being my haven for all these years.
+                    Thank you for being my charger, for making me laugh
+                    when all I wanted the most was cry, and thank you simply
+                    for existing and for always trying to become better.
+                </p>
+
+                <p>
+                    I hope you open your own gallery one day and have
+                    your own book on the market, in shaa Allah.
+                    And money, of course. Lots of it.
+                    I hope you have people around you who truly deserve
+                    to be there, in this dunya and in Jannah.
+                </p>
+
+                <p>
+                    I don't really believe in birthdays,
+                    but I believe in you.
+                </p>
+
+                <p>
+                    I'm pretty sure you will make it,
+                    to whatever height place you can reach bidn allah,
+                    always remmember that i'll be right there cheering for you, 
+                    and that I will always be proud of you.
+                    The only thing I've told you, and will always tell you,
+                    is to shoot for the stars,
+                    and whatever happens i'm still proud.
+                </p>
+
+                <p>
+                    I love you by all means, even though no words could
+                    ever describe how much I love you.
+                    Except maybe this: <br>
+                    ( you are in my prayers.
+                    You always have been, and you always will be. )
+                </p>
+
+                <p>
+                    That's how important you are to me.
+                </p>
+
+                <div class="signature">
+                    Always, ♡
+                </div>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+   <!--arabic poem-->
+
+    <section class="letter-page" id="arabicLetter">
+
+        <button class="back-button" onclick="goHome()">
+            ←
+        </button>
+
+        <article class="letter blue">
+
+            <p style="text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(30px, 8vw, 48px); color: #59616a; margin-bottom: 35px;">
+           ✧ بين الأمس والأبد
+            </p>
+
+            <div class="arabic-letter">
+
+                <p>
+                    يشهد الله اني احبك في هذه الدنيا حبا جما لا يعرفه سواه <br>
+
+                    اختا وصديقة وروحا رفيقة <br>
+                    
+                    ادعو الله ان يرزقك خيري الدنيا وخير الاخرة <br>
+
+                    وان يرزقك الجنة دون حساب ولا سابق عذاب <br>
+
+                    ادعوه ايضا ان يرزقك صحة وضحبة صالحة و اسبابا توصلك للخير<br>
+
+                    يوجد الكثير من الكلمات لكن لا شيء منها يصفك ولا يصف مكانتك في قلبي<br>
+
+                    لكن الحمدلله على وجودك انتي نعمة لمن يدرك وخسارة لمن لا يفعل<br>
+
+                    كنا جيران في هذه الدنيا وان شاء الله سنكون مجددا باذن الرحمن في الدنيا والاخرة في الفردوس الاعلى ان شاء الله <br>
+
+                    كنتي دائما السبب في ابتسامتي ولا زلتي فجزاك الله خيرا <br>
+
+                    فيا صحبة الصغر ارجو من الله ان يزرع الطمأنينة في قلبك فهي اغلى من مال الدنيا <br>
+
+                    ومن الرزق الوفير ما يقربك منه ويجعلك سببا في تسهيل حياة العباد <br>
+
+                    اعلمي انه مهما كبرت مسافة بيننا فلا تحزني<br>
+
+                    تذكري انها دنيا واعملي للجنة لالقاك فيها<br>
+
+                    القاك في جنة الفردوس الاعلى التي لا فراق فيها ولا وداع<br>
+                   
+                </p>
+
+            </div>
+            
+        </article>
+        
+    </section>
+
+    <script>
+
+        /* =========================
+           OPEN LETTER
+        ========================== */
+
+        function openLetter(letterId) {
+
+            document.getElementById("homePage").style.display = "none";
+
+            document.getElementById("englishLetter").classList.remove("show");
+            document.getElementById("arabicLetter").classList.remove("show");
+
+            document.getElementById(letterId).classList.add("show");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        /* =========================
+           RETURN HOME
+        ========================== */
+
+        function goHome() {
+
+            document.getElementById("englishLetter").classList.remove("show");
+            document.getElementById("arabicLetter").classList.remove("show");
+
+            document.getElementById("homePage").style.display = "flex";
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        /* =========================
+           LITTLE BIRTHDAY CONFETTI
+        ========================== */
+
+        function createConfetti() {
+
+            const symbols = ["♡", "✦", "✧", "•"];
+
+            for (let i = 0; i < 45; i++) {
+
+                const piece = document.createElement("div");
+
+                piece.classList.add("confetti");
+
+                piece.innerHTML =
+                    symbols[Math.floor(Math.random() * symbols.length)];
+
+                piece.style.left =
+                    Math.random() * 100 + "vw";
+
+                piece.style.fontSize =
+                    (Math.random() * 10 + 8) + "px";
+
+                piece.style.animationDuration =
+                    (Math.random() * 3 + 3) + "s";
+
+                piece.style.animationDelay =
+                    Math.random() * 2 + "s";
+
+                document.body.appendChild(piece);
+
+                setTimeout(() => {
+                    piece.remove();
+                }, 7000);
+
+            }
+
+        }
+
+
+        /* =========================
+           START BIRTHDAY MAGIC
+        ========================== */
+
+        window.addEventListener("load", () => {
+
+            setTimeout(() => {
+                createConfetti();
+            }, 700);
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+```
